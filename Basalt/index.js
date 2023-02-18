@@ -1,7 +1,7 @@
 //consts and modules
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
-const ipcMain = require('electron').ipcMain;
+//const ipcMain = require('electron').ipcMain;
 
 // create window
 const createWindow = () => {
@@ -9,10 +9,12 @@ const createWindow = () => {
       width: 800,
       height: 600,
       webPreferences: {
+        enableRemoteModule: true,
         preload: path.join(__dirname, 'backend/preload.js') //points to the path of the currently executing script
       },
       autoHideMenuBar: true,
-      frame: false
+      frame: false,
+      
     })
   
     win.loadFile('app/index.html')

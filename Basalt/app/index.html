@@ -5,8 +5,8 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Basalt Alpha</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/topbar.css">  
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/topbar.css">  
   </head>
   <body>
     <!-- top bar -->
@@ -32,6 +32,7 @@
     </article>
 
     <!-- connected js -->
-    <script src="js/window.js"></script>
+    <script src="../js/window.js" defer type="module"></script>
+    <script src="./renderer.js" defer type="module"></script>
   </body>
 </html>

@@ -1,5 +1,7 @@
-const os = require('os');
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, contextBridge } = require('electron');
+//const os = require('os');
+
+console.log("preload.js loaded"); //debug
 
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
@@ -20,4 +22,4 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-contextBridge.exposeInMainWorld('API', API);
+contextBridge.exposeInMainWorld('app', API);
