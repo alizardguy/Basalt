@@ -6,8 +6,23 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Basalt Alpha</title>
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/topbar.css">  
   </head>
   <body>
+    <!-- top bar -->
+    <nav>
+      <!-- left -->
+      <div class="left-nav">
+      
+      </div>
+      <!-- right -->
+      <div class="right-nav">
+        <span class="nav-link" id="minimize-app">&minus;</span>
+        <span class="nav-link" id="close-app">&#10006;</span>  
+      </div>
+    </nav>
+
+    <!-- main -->
     <article>
       <h1>Welcome!</h1>
       In debug do "npm start" to run! </br>
@@ -15,5 +30,8 @@
       Chromium <span id="chrome-version"></span>,
       and Electron <span id="electron-version"></span>.
     </article>
+
+    <!-- connected js -->
+    <script src="js/window.js"></script>
   </body>
 </html>

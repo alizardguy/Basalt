@@ -1,6 +1,7 @@
 //consts and modules
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const ipcMain = require('electron').ipcMain;
 
 // create window
 const createWindow = () => {
@@ -8,11 +9,13 @@ const createWindow = () => {
       width: 800,
       height: 600,
       webPreferences: {
-        preload: path.join(__dirname, 'preload.js') //points to the path of the currently executing script
-      }
+        preload: path.join(__dirname, 'backend/preload.js') //points to the path of the currently executing script
+      },
+      autoHideMenuBar: true,
+      frame: false
     })
   
-    win.loadFile('index.html')
+    win.loadFile('app/index.html')
   }
 
   app.whenReady().then(() => {
@@ -27,3 +30,11 @@ const createWindow = () => {
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
   })
+
+ipcMain.on('app/close', () => {
+    app.quit();
+  });
+
+  ipcMain.on('app/minimize', () => {
+    mainWindow.minimize();
+  });
