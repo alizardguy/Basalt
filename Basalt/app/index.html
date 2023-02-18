@@ -13,26 +13,24 @@
     <nav>
       <!-- left -->
       <div class="left-nav">
-      
+      <button class="nav-menu" id="file-menu">File</button>
       </div>
       <!-- right -->
       <div class="right-nav">
         <span class="nav-link" id="minimize-app">&minus;</span>
         <span class="nav-link" id="close-app">&#10006;</span>  
       </div>
+
+      <div class="dropdown-menu" id="file-dropdown-menu" hidden="true">
+        <button class="dropdown-menu-item">hi</button>
+      </div>
     </nav>
 
     <!-- main -->
-    <article>
-      <h1>Welcome!</h1>
-      In debug do "npm start" to run! </br>
-      We are using Node.js <span id="node-version"></span>,
-      Chromium <span id="chrome-version"></span>,
-      and Electron <span id="electron-version"></span>.
-    </article>
 
     <!-- connected js -->
     <script src="../js/window.js" defer type="module"></script>
     <script src="./renderer.js" defer type="module"></script>
+    <script src="../js/dropdown.js" defer></script>
   </body>
 </html>
