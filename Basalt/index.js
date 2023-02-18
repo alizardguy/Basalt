@@ -31,12 +31,13 @@ const createWindow = () => {
 //app quit
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
-  })
+  });
 
 ipcMain.on('app/close', () => {
     app.quit();
   });
 
-  ipcMain.on('app/minimize', () => {
-    mainWindow.minimize();
+ipcMain.on('app/minimize', () => {
+  var focusedWindow = BrowserWindow.getFocusedWindow();
+  focusedWindow.minimize();
   });
