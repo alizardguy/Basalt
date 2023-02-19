@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- top bar -->
-    <nav>
+    <nav class="prevent-select">
       <!-- left -->
       <div class="left-nav">
       <button class="nav-menu" id="nav-menu-open">File</button>
@@ -21,8 +21,12 @@
         <span class="nav-link" id="close-app">&#10006;</span>  
       </div>
 
+      <!-- file dropdown -->
       <div class="dropdown-menu" id="file-dropdown-menu" hidden="true">
-        <button class="dropdown-menu-item">hi</button>
+      <ul>
+        <li><span class="dropdown-menu-item">Open Folder</span></li>
+        <li><span class="dropdown-menu-item">Open File</span></li>
+      </ul>
       </div>
     </nav>
 
