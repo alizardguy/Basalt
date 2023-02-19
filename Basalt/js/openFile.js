@@ -7,5 +7,5 @@ document.getElementById("open-file").addEventListener("click", openFilePrompt);
 
 /* functions */
 function openFilePrompt() {
-    console.log("open file prompt");
+    app.window.openFile();
 }

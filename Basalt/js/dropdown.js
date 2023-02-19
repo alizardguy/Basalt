@@ -26,6 +26,6 @@ function closeAllDropdowns() {
 /* close when clicking outside */
 const popups = [document.getElementsByClassName('dropdown-menu')];
 document.addEventListener("click", function(evnt){
-    console.log(evnt.target.classList);
+    //console.log(evnt.target.classList);
     evnt.target.classList.contains('nav-menu') ? null : closeAllDropdowns();
 });

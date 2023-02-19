@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window: {
       close: () => ipcRenderer.send('app/close'),
       minimize: () => ipcRenderer.send('app/minimize'),
+      openFile: () => ipcRenderer.send('open-file'),
     }
   }
 
