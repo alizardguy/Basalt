@@ -13,7 +13,12 @@
     <nav class="prevent-select">
       <!-- left -->
       <div class="left-nav">
-      <button class="nav-menu" id="nav-menu-open">File</button>
+      <button class="nav-menu" id="nav-file-open">File</button>
+      <button class="nav-menu" id="nav-edit-open">Edit</button>
+      </div>
+      <!-- middle -->
+      <div class="middle-nav">
+        <span>Basalt</span>
       </div>
       <!-- right -->
       <div class="right-nav">
@@ -22,12 +27,19 @@
       </div>
 
       <!-- file dropdown -->
-      <div class="dropdown-menu" id="file-dropdown-menu" hidden="true">
+      <div class="dropdown-menu dropdown-menu-file" id="file-dropdown-menu" hidden="true">
       <ul>
-        <li><span class="dropdown-menu-item">Open Folder</span></li>
-        <li><span class="dropdown-menu-item">Open File</span></li>
+        <li><span class="dropdown-menu-item" id="open-folder">Open Folder</span></li>
+        <li><span class="dropdown-menu-item" id="open-file">Open File</span></li>
       </ul>
       </div>
+      <!-- edit dropdown -->
+      <div class="dropdown-menu dropdown-menu-edit" id="edit-dropdown-menu" hidden="true">
+        <ul>
+          <li><span class="dropdown-menu-item">Copy</span></li>
+          <li><span class="dropdown-menu-item">Paste</span></li>
+        </ul>
+        </div>
     </nav>
 
     <!-- main -->
@@ -36,5 +48,6 @@
     <script src="../js/window.js" defer type="module"></script>
     <script src="./renderer.js" defer type="module"></script>
     <script src="../js/dropdown.js" defer></script>
+    <script src="../js/openFile.js" defer type="module"></script>
   </body>
 </html>

@@ -21,6 +21,10 @@ nav{
     -webkit-app-region: no-drag;
 }
 
+.middle-nav{
+    text-align: center;
+    display: absolute;
+}
 
 .nav-menu{
     background-color: transparent;
@@ -70,4 +74,9 @@ nav{
 .dropdown-menu-item:hover{
     background-color: white;
     color: black;
+}
+
+/* specfic */
+.dropdown-menu-edit{
+    margin-left: 40px;    
 }
