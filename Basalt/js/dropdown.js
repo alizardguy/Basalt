@@ -10,6 +10,6 @@ fileMenu.addEventListener("onclick", showFileDropdown);
 
 /* show functions */
 function showFileDropdown() {
-    //fileMenuDropdown.hidden = !fileMenuDropdown.hidden;
+    fileMenuDropdown.hidden = !fileMenuDropdown.hidden;
     console.log("showFileDropdown() called"); //to do: make this work
 }
