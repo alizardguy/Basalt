@@ -23,4 +23,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  let indexBridge = {
+    filePath: (callback) => ipcRenderer.on("file-path", (callback))
+  }
+
 contextBridge.exposeInMainWorld('app', API);
+contextBridge.exposeInMainWorld("indexBridge", indexBridge);

@@ -9,3 +9,8 @@ document.getElementById("open-file").addEventListener("click", openFilePrompt);
 function openFilePrompt() {
     app.window.openFile();
 }
+
+/* read file */
+window.indexBridge.filePath((event, filePath) => {
+    console.log("file path: " + filePath);
+})

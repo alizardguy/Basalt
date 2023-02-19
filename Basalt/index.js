@@ -66,6 +66,8 @@ ipcMain.on('open-file', () => {
       properties: ['openFile']
     }).then(result => {
       console.log(result.filePaths)
+      /* send file path to renderer process */
+      focusedWindow.webContents.send('file-path', result.filePaths[0]);
     }).catch(err => {
       console.log(err)
     })
