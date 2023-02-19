@@ -43,28 +43,30 @@ ipcMain.on('app/minimize', () => {
   focusedWindow.minimize();
   });
 
+/* open folder */
+ipcMain.on('open-folder', () => {
+    //set focused window
+    var focusedWindow = BrowserWindow.getFocusedWindow();
+
+    dialog.showOpenDialog(focusedWindow, {
+      properties: ['openFile', 'openDirectory']
+    }).then(result => {
+      console.log(result.filePaths)
+    }).catch(err => {
+      console.log(err)
+    })
+  });
+
 /* open file */
 ipcMain.on('open-file', () => {
     //set focused window
     var focusedWindow = BrowserWindow.getFocusedWindow();
 
-    //opens file dialog
-    console.log("open file");
-    const files = dialog.showOpenDialog(focusedWindow, {
-      properties: ['openFile'],
-      filters: [
-        {name: 'Text Files', extensions: ['txt', 'text', 'md', 'markdown']},
-      ]
-    });
-
-    console.log("opened file prompt");
-    //if no file is selected
-    if (!files) return;
-
-    //get the first file
-    const file = files[0];
-
-    //read the file
-    const fileContent = fs.readFileSync(file).toString();
-    console.log(fileContent);
-  });
+    dialog.showOpenDialog(focusedWindow, {
+      properties: ['openFile']
+    }).then(result => {
+      console.log(result.filePaths)
+    }).catch(err => {
+      console.log(err)
+    })
+});
