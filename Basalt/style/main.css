@@ -21,3 +21,7 @@ body{
 ul {
     list-style-type: none;
   }
+
+.no-win-drag{
+    -webkit-app-region: no-drag;
+}
