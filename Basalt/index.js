@@ -17,9 +17,17 @@ const createWindow = () => {
       frame: false,
       
     })
+
+    win.once('ready-to-show', () => {
+      win.webContents.setZoomFactor(1)
+      win.show()
+  })
+  
   
     win.loadFile('app/index.html')
   }
+
+  app.commandLine.appendSwitch('disable-pinch');
 
   app.whenReady().then(() => {
     createWindow()
