@@ -11,6 +11,8 @@ function openFilePrompt() {
 }
 
 /* read file */
-window.indexBridge.filePath((event, filePath) => {
+window.indexBridge.fileData((event, filePath, fileData) => {
+    console.log("file loading started");
     console.log("file path: " + filePath);
+    console.log("file data: " + fileData);
 })

@@ -61,13 +61,21 @@ ipcMain.on('open-folder', () => {
 ipcMain.on('open-file', () => {
     //set focused window
     var focusedWindow = BrowserWindow.getFocusedWindow();
-
+    var fileData = "";
     dialog.showOpenDialog(focusedWindow, {
       properties: ['openFile']
     }).then(result => {
-      console.log(result.filePaths)
-      /* send file path to renderer process */
-      focusedWindow.webContents.send('file-path', result.filePaths[0]);
+      console.log("file path: " + result.filePaths)
+      console.log("file contents loaded!")
+      /* read file */
+      fs.readFile(result.filePaths[0], 'utf-8', (err, data) => { //read file
+        fileData = data.toString();
+
+        console.log("sending file data: " + fileData);
+
+        /* send file data to render */
+        focusedWindow.webContents.send('file-data', result.filePaths[0], fileData);
+      });
     }).catch(err => {
       console.log(err)
     })
